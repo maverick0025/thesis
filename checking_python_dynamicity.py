@@ -1,5 +1,10 @@
 import time
 import random
+import pypyjit
+
+#jit memory stats before the program run
+total_mem, mem_in_use = pypyjit.get_stats.asmmemmgr()
+print(f'before_total_mem:{total_mem} , before_ mem_in_use: {mem_in_use} ')
 
 #checking pypy runtimes
 t0 = time.perf_counter()
@@ -30,10 +35,11 @@ for k in range(100000):
     '''
     dict = {1:32, "two":"banana", 3.5:"cherry", (5,6):"jackfruit", None: "fig", -1: (9876,"fg"), 8+2j: "honey", frozenset([9,10]):"guava", False: "blueberry", "final fruit":"tomato"}
    '''
+
     dict = {12:"lion", 145:"sealion",534:"tiger", 5641433:"Bear", 896:"hippo", 3479: "dog", 23255: "cat", 654:"fish", 767: "deer", 997:"bengal tiger"}
     key_list = list(dict.keys())
     nthkey = key_list[6]
-    print(f'nth element in dict: {dict[nthkey]}')
+    #print(f'nth element in dict: {dict[nthkey]}')
     
 
 
@@ -42,3 +48,7 @@ print(f'counted for: {count}')
 total = t1 - t0
 
 print(f'time took: {total}')
+
+tot_mem, mem_in_used pypyjit.get_stats.asmmemmgr()
+
+print(f"after total mem: {tot_mem}, mem_used: {mem_in_used}")
