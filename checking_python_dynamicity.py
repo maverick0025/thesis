@@ -2,8 +2,9 @@ import time
 import random
 import pypyjit
 
+pypyjit.set_param("threshold=100")
 #jit memory stats before the program run
-total_mem, mem_in_use = pypyjit.get_stats.asmmemmgr()
+total_mem, mem_in_use = pypyjit.get_stats_asmmemmgr()
 print(f'before_total_mem:{total_mem} , before_ mem_in_use: {mem_in_use} ')
 
 #checking pypy runtimes
@@ -49,6 +50,5 @@ total = t1 - t0
 
 print(f'time took: {total}')
 
-tot_mem, mem_in_used pypyjit.get_stats.asmmemmgr()
-
+tot_mem, mem_in_used= pypyjit.get_stats_asmmemmgr()
 print(f"after total mem: {tot_mem}, mem_used: {mem_in_used}")
