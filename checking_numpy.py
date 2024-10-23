@@ -5,7 +5,7 @@ import time
 start_time = time.time()
 
 # Generate two large random matrices
-matrix_size = 5000  # Adjust size to roughly hit 2 seconds, depending on your system
+matrix_size = 50000  # Adjust size to roughly hit 2 seconds, depending on your system
 A = np.random.rand(matrix_size, matrix_size)
 B = np.random.rand(matrix_size, matrix_size)
 
